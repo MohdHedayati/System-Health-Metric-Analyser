@@ -1,0 +1,6 @@
+[submodule "desktop-agent"]
+	path = desktop-agent
+	url = https://github.com/MohdHedayati/AI-Based-Device-Health-Monitor.git
+[submodule "web-agent"]
+	path = web-agent
+	url = https://github.com/Once-1296/Web_App_For_System_Health_Metrics_Analyser.git
