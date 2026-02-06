@@ -1,4 +1,4 @@
-# System Health AI — Intelligent Device Diagnostics Platform
+# System Health Metric Analyser Platform
 
 > **An end-to-end AI-powered system health monitoring solution combining local telemetry, cloud analytics, and agentic diagnostics.**
 
@@ -6,7 +6,7 @@
 
 ## 📖 Project Overview
 
-**System Health AI** is a distributed platform designed to move beyond simple resource monitoring. Instead of just showing you a CPU graph, it uses **Generative AI** and **Machine Learning** to explain *why* your system is behaving the way it is.
+**System Health Metric Analyser** is a distributed platform designed to move beyond simple resource monitoring. Instead of just showing you a CPU graph, it uses **Generative AI** and **Machine Learning** to explain *why* your system is behaving the way it is.
 
 The ecosystem is split into two specialized applications:
 
@@ -58,14 +58,14 @@ Since the system relies on a unified cloud backend, both applications need crede
 
 1. Environment Variables
 Create a .env file (for Desktop) or .streamlit/secrets.toml (for Web) containing your credentials:
-
 Ini, TOML
 
 # Example Configuration
-SUPABASE_URL="[https://your-project.supabase.co](https://your-project.supabase.co)"
+```SUPABASE_URL="[https://your-project.supabase.co](https://your-project.supabase.co)"
 SUPABASE_KEY="your-anon-key"
 GOOGLE_CLIENT_ID="your-oauth-client-id"
 CHROMA_DB_PATH="./chroma_db"
+```
 
 ## 🚀 Running the Applications
 You will need to run the Desktop Agent to generate data, and the Web Dashboard to view it. It is recommended to run these in separate terminal windows.
