@@ -4,3 +4,6 @@
 [submodule "web-agent"]
 	path = web-agent
 	url = https://github.com/Once-1296/Web_App_For_System_Health_Metrics_Analyser.git
+[submodule "ML-Model-Windows"]
+	path = ML-Model-Windows
+	url = https://github.com/Once-1296/INHERITANCE-ML-MODEL-HOST.git
