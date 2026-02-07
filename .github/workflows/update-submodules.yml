@@ -1,0 +1,45 @@
+name: Auto Update Submodules
+
+on:
+  # Schedule runs at 00:00 UTC every day
+  schedule:
+    - cron: '0 0 * * *'
+  # Allows you to run this manually from the Actions tab for testing
+  workflow_dispatch:
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+    
+    # Critical: This permission is required to push the changes back to the repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0 # Fetches history to ensure smooth updates
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Update Submodules
+        run: |
+          # Updates submodules to the latest commit on their tracked remote branch
+          git submodule update --remote --recursive
+
+      - name: Check for changes and Push
+        run: |
+          # Check if git status shows any modifications
+          if [[ -n $(git status -s) ]]; then
+            echo "Changes detected in submodules. Committing..."
+            git add .
+            git commit -m "chore: auto-update submodules to latest"
+            git push origin main
+          else
+            echo "Submodules are already up to date."
+          fi
